@@ -3,7 +3,6 @@ import * as React from 'react';
 import Layout from '@/components/layout/Layout';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
 
@@ -39,12 +38,12 @@ export default function HomePage() {
             </p>
             <p className='mt-2 text-sm text-gray-700'>
               <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-                See the repository
+                See the repository (ArrowLink)
               </ArrowLink>
             </p>
 
             <ButtonLink className='mt-6' href='/components' variant='light'>
-              See all components
+              See all components (ButtonLink)
             </ButtonLink>
 
             <UnstyledLink
@@ -59,13 +58,6 @@ export default function HomePage() {
                 alt='Deploy with Vercel'
               />
             </UnstyledLink>
-
-            <footer className='absolute bottom-2 text-gray-700'>
-              © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Theodorus Clarence
-              </UnderlineLink>
-            </footer>
           </div>
         </section>
       </main>
