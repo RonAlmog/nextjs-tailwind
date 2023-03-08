@@ -1,3 +1,7 @@
+import { Popover } from '@headlessui/react';
+import Link from 'next/link';
+import { FaUser } from 'react-icons/fa';
+
 const Nav = () => {
   return (
     <nav className='flex flex-wrap items-center justify-between bg-teal-500 p-6'>
@@ -29,32 +33,67 @@ const Nav = () => {
       </div>
       <div className='block w-full flex-grow lg:flex lg:w-auto lg:items-center'>
         <div className='text-sm lg:flex-grow'>
-          <a
-            href='#responsive-header'
+          <Link
+            href='/'
             className='mt-4 mr-4 block text-teal-200 hover:text-white lg:mt-0 lg:inline-block'
           >
-            Docs
-          </a>
-          <a
-            href='#responsive-header'
+            Home
+          </Link>
+
+          <Link
+            href='/colors'
+            className='mt-4 mr-4 block text-teal-200 hover:text-white lg:mt-0 lg:inline-block'
+          >
+            Colors
+          </Link>
+
+          <Link
+            href='/components'
             className='mt-4 mr-4 block text-teal-200 hover:text-white lg:mt-0 lg:inline-block'
           >
             Examples
-          </a>
-          <a
-            href='#responsive-header'
-            className='mt-4 block text-teal-200 hover:text-white lg:mt-0 lg:inline-block'
+          </Link>
+          <Link
+            href='/components'
+            className='mt-4 mr-4 block text-teal-200 hover:text-white lg:mt-0 lg:inline-block'
           >
             Blog
-          </a>
+          </Link>
         </div>
         <div>
-          <a
-            href='#'
+          {/* <Link
+            href='/components'
             className='mt-4 inline-block rounded border border-white px-4 py-2 text-sm leading-none text-white hover:border-transparent hover:bg-white hover:text-teal-500 lg:mt-0'
           >
             Download
-          </a>
+          </Link> */}
+
+          <Popover className='relative'>
+            {({ open }) => (
+              <>
+                <Popover.Button
+                  className={`${
+                    open ? 'bg-amber-800' : 'bg-white'
+                  } rounded-full p-3 `}
+                >
+                  <FaUser />
+                </Popover.Button>
+
+                <Popover.Panel className='absolute right-0 z-10 mt-3 w-48 max-w-sm  px-4 sm:px-0 lg:max-w-sm'>
+                  <div className='overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-25'>
+                    <div className='relative  bg-white p-7 '>
+                      <Link
+                        href='/account/signup'
+                        className='text-black-700 mt-4 mr-4 block hover:font-semibold lg:mt-0 lg:inline-block'
+                      >
+                        Sign Up
+                      </Link>
+                    </div>
+                  </div>
+                </Popover.Panel>
+              </>
+            )}
+          </Popover>
         </div>
       </div>
     </nav>
