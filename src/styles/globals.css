@@ -5,6 +5,9 @@
 .btn {
   @apply rounded-md;
 }
+.rounded-btn {
+  @apply rounded-none;
+}
 :root {
   /* #region  /**=========== Primary Color =========== */
   /* !STARTERCONF Customize these variable, copy and paste from /styles/colors.css for list of colors */
