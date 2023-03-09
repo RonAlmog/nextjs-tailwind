@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Nav />
-      {children}
+      <div className='layout min-h-screen py-10 px-1'>{children}</div>
       <Footer />
     </>
   );

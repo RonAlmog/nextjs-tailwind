@@ -17,10 +17,10 @@ const Nav = () => {
             </li>
             <li>
               <Link
-                href='/account/signup'
+                href='/test'
                 className='text-black-700 mt-4 mr-4 block hover:font-semibold lg:mt-0 lg:inline-block'
               >
-                Item 2
+                Test
               </Link>
             </li>
             <li tabIndex={0} className='relative'>

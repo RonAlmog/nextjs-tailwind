@@ -10,7 +10,7 @@ export default function TestPage() {
 
       <main>
         <section className=''>
-          <div className='layout min-h-screen py-20'>
+          <div>
             <h2>Helooo Woooorld!!</h2>
           </div>
         </section>
