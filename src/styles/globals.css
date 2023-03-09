@@ -88,7 +88,7 @@
   .layout {
     /* 1100px */
     max-width: 68.75rem;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     @apply mx-auto w-11/12;
   }
 

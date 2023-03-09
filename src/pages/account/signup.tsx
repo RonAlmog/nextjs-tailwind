@@ -28,11 +28,11 @@ export default function SignupPage() {
       <Seo templateTitle='Signup' />
 
       <main>
-        <section className='flex justify-center border'>
-          <div className='flex w-10/12 flex-col items-center border'>
+        <section className='flex justify-center'>
+          <div className='flex w-10/12 flex-col items-center'>
             <h4>Signup</h4>
 
-            <div className='card my-2 w-10/12 border border-red-600 bg-base-100 p-2 shadow-xl'>
+            <div className='card my-2 w-10/12 bg-base-200 p-8 shadow-xl'>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='form-control w-full '>
                   <label className='label'>
@@ -42,7 +42,9 @@ export default function SignupPage() {
                     type='text'
                     {...register('firstName')}
                     placeholder='First name'
-                    className='input-bordered input w-full'
+                    className={`input-bordered input w-full ${
+                      errors.firstName ? 'input-error' : ''
+                    }`}
                   />
 
                   <div className='mt-1 ml-1 text-sm text-red-600 dark:text-red-500'>
@@ -59,7 +61,9 @@ export default function SignupPage() {
                     type='text'
                     placeholder='Last name'
                     {...register('lastName')}
-                    className='input-bordered input w-full'
+                    className={`input-bordered input w-full ${
+                      errors.lastName ? 'input-error' : ''
+                    }`}
                   />
                   <div className='mt-1 ml-1 text-sm text-red-600 dark:text-red-500'>
                     {errors.lastName?.message?.toString()}
@@ -74,13 +78,15 @@ export default function SignupPage() {
                     type='text'
                     placeholder='Email'
                     {...register('email')}
-                    className='input-bordered input w-full'
+                    className={`input-bordered input w-full ${
+                      errors.email ? 'input-error' : ''
+                    }`}
                   />
                   <div className='mt-1 ml-1 text-sm text-red-600 dark:text-red-500'>
                     {errors.email?.message?.toString()}
                   </div>
                 </div>
-                <div className='form-group'>
+                <div className='mt-4 flex justify-center'>
                   <button type='submit' className='btn-primary btn mx-3'>
                     Register
                   </button>
